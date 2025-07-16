@@ -5,7 +5,10 @@
     
     const guitarras = ref([])
 
-
+    
+const agregarCarrito = () =>{
+    console.log('agregando...')
+}
 
     onMounted(() =>{
         guitarras.value = db;
@@ -103,7 +106,9 @@
 
         <div class="row mt-5">
             <Guitarra
-                v-for="guitarra in guitarras"          
+                v-for="guitarra in guitarras" 
+                :guitarra="guitarra"
+                @agregar-carrito="agregarCarrito"      
             />
         </div>
     </main>
